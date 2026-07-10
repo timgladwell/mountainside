@@ -1,0 +1,24 @@
+Adam is the sole proprietier for a cottage country archectural design business. Adam has spent more than 10 years growing the business and it's very successful, and Adam is long past the point where his manual processes are a bottleneck. Things like keeping track of deadlines, which customers have emailed him asking for what things by when, which project is in which phase and is waiting on what.
+
+We're going to help Adam identify some options and the must have / nice to have features. This will look a little like an RFx, but informal - we want to iterate this list with Adam so he's prepared for conversations with software salespeople e.g. at conferences.
+
+# _tl;dr_
+* Adam runs an architectural design business that designs custom residental homes (and garages) for both new build and rennovations. Adam serves the Collingwood Ontario and surrounding community, and his client base is generally wealthy and upscale.
+* The business has many clients, each with one or more projects. Interaction with customers can be in in a scheduled meeting or ad hoc, in person, on a work site, and over phone, email, and text. Sometimes the client isn't the home owner but the home owner's contractor - Adam has developed significant professional relationships in the community, and the area's custom design economy is well developed.
+* Relationship management is important to Adam, and he strives for a personal interaction with each of his clients - this reflects Adam's core approach to business but also the nature of the clients he works with.
+* Current state business management is very ad hoc - Adam keeps a lot in his head, and has developed a system of organization based on physical paper being in specific locations. 
+* Adam is competent with computers and conducts all design creation, review, and iteration work using specialized drafting software. However, Adam is much more comfortable with the concrete physical and that's why the paper "tokens" process management has lasted so long.
+* Adam is jumping from one overdue request to another, and tries very hard to service any emergency requests (e.g. "<thing> has to be modified to hit town inspector requirements and the concrete truck comes tomorrow"). He often needs to push dates around to try and keep all the balls in the air and tries to keep all of this in his head. That approach is starting to break down - he's further and further behind and his personal and family stress is a real worry.
+
+# Projects
+* Projects go through a multi-step lifecycle. From ideation, to design iterations, to permits and approvals, to construction, to closure. There's also payment steps involved when projects hit milestones, which triggers a separate invoicing process.
+* Project drawings are created and reviewed on computer, but are printed out for things like client presentations and permitting / review steps. Adam several printers, including commercial drafting printer.
+* In this area formal project "contracts" are not such a big thing - contract management is something that would make sense to have as part of the future state, but contracts today are really just a copy-pasted template with a signature and work okay. What is a big gap is tracking of the requirement changes that come from site visits and customer request for changes.
+
+# Future state
+* Something that allows him to understand what he's promised to people when and can give him a priority list of what he needs to be doing / working on. When things change, sometime that helps him communicate the new deadlines to folks.
+* Something to help him keep communication organized - understanding and organizing the incoming client requets, but also where he can enter the notes from site visits and phone calls.
+* Something that allows Adam to work quickly - in part, his current approach has developed because he was able to keep everything in his head which is basically a zero-lag data entry and processing tool. Adam cannot be spending valuable time feeding the system information because the information feeding step will just be skipped and the system becomes worse than useless. Email reading tools, dictation transcription tools, and integrations will be important.
+* Customizable workflows for projects - this actually doesn't need to be a fixed workflow so much as it needs to be a manual status change and some kind of changes-over-time tracker. Adam knows his business best and software that gets in the way will be software that isn't used.
+
+Please ask any clarifying questions and generate a first draft of the future-state-system requirements in here https://drive.google.com/drive/u/0/folders/1_6A6Dv2UEe6Exc2CJS2ILQRefxyctw31
