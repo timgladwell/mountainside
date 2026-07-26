@@ -1,0 +1,29 @@
+{{ $plans := .Params.plans }}
+{{ $items := (site.GetPage "plans").Pages.ByWeight }}
+<section id="plans">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{{ $plans.eyebrow }}</p>
+      <h2>{{ $plans.heading }}</h2>
+      <p>{{ $plans.intro }}</p>
+    </div>
+
+    <div class="plans-banner">
+      <div>{{ $plans.banner | markdownify }}</div>
+    </div>
+
+    <div class="plans-grid">
+      {{ range $items }}
+      <a class="plan-card" href="{{ .RelPermalink }}">
+        <div class="shot-placeholder"><p>PHOTO NEEDED<br>{{ .Params.photo_needed }}</p></div>
+        <h3>{{ .Title }}</h3>
+        <p class="spec-tag">{{ .Params.spec | upper }}</p>
+        <div class="plan-price">
+          <span>Starting at</span>
+          <span class="amount">{{ lang.FormatNumber 0 .Params.price | printf "$%s" }}{{ if .Params.price_is_placeholder }}<small>PLACEHOLDER PRICE</small>{{ end }}</span>
+        </div>
+      </a>
+      {{ end }}
+    </div>
+  </div>
+</section>

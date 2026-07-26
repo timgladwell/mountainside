@@ -1,0 +1,21 @@
+{{ $about := .Params.about }}
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <div class="placeholder-frame">
+        {{ partial "responsive-img.html" (dict "src" $about.photo "alt" "Placeholder photo of Adam" "sizes" "(max-width: 800px) 90vw, 40vw") }}
+      </div>
+      <p class="placeholder-caption">{{ $about.photo_caption | markdownify }}</p>
+    </div>
+
+    <div>
+      <p class="eyebrow">{{ $about.eyebrow }}</p>
+      <h2>{{ $about.heading }}</h2>
+      <div class="about-copy" style="margin-top: 1.5rem;">
+        {{ with index $about.paragraphs 0 }}<p>{{ . }}</p>{{ end }}
+        <blockquote class="pull-quote">&ldquo;{{ $about.pull_quote }}&rdquo;</blockquote>
+        {{ range after 1 $about.paragraphs }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </div>
+  </div>
+</section>

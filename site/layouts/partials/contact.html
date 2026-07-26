@@ -1,0 +1,48 @@
+{{ $contact := .Params.contact }}
+<section id="contact" class="contact-section">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" style="color:#cfd6c8;">{{ $contact.eyebrow }}</p>
+      <h2>{{ $contact.heading }}</h2>
+      <p>{{ $contact.intro }}</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-details">
+        <div>{{ $contact.name | upper }}<br>{{ site.Params.businessName }}</div>
+        <div style="margin-top:1rem;">
+          <a href="mailto:{{ site.Params.contactEmail }}">{{ site.Params.contactEmail }}</a>
+          {{ with site.Params.contactPhone }}<br><a href="tel:{{ . }}">{{ . }}</a>{{ end }}
+        </div>
+        <div style="margin-top:1rem;">{{ $contact.address }}<br>Serving {{ site.Params.serviceArea }}</div>
+      </div>
+
+      {{/* ponytail: mailto form, no backend yet — swap the action for a real handler (Cloudflare Pages Forms / Formspree) before launch */}}
+      <form class="contact-form" action="mailto:{{ site.Params.contactEmail }}" method="post" enctype="text/plain">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div class="field">
+          <label for="project-type">Project type</label>
+          <select id="project-type" name="project type">
+            <option>New build</option>
+            <option>Renovation / addition</option>
+            <option>Garage</option>
+            <option>Pre-designed plan</option>
+            <option>Not sure yet</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">A bit about the project</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <button class="btn btn--solid" type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>

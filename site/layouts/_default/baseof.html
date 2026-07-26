@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="{{ site.Language.Lang | default "en" }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+
+{{ if not site.Params.allowIndexing }}
+<div class="preview-flag">{{ site.Params.environmentLabel | default "Preview" }} build for Adam — not published, not for sharing. Blocked from search engines and AI crawlers.</div>
+{{ end }}
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+{{ partial "header.html" . }}
+
+<main id="main">
+  {{ block "main" . }}{{ end }}
+</main>
+
+{{ partial "footer.html" . }}
+</body>
+</html>

@@ -1,0 +1,37 @@
+{{ $hero := .Params.hero }}
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow eyebrow--accent">{{ $hero.eyebrow }}</p>
+      <h1>{{ $hero.headline | safeHTML }}</h1>
+      <p class="hero-lede">{{ $hero.lede }}</p>
+      <div class="hero-actions">
+        <a class="btn btn--solid" href="{{ $hero.primary_cta.href }}">{{ $hero.primary_cta.label }}</a>
+        <a class="btn btn--ghost" href="{{ $hero.secondary_cta.href }}">{{ $hero.secondary_cta.label }}</a>
+      </div>
+    </div>
+
+    <div class="survey" aria-hidden="true">
+      <svg viewBox="0 0 600 450" preserveAspectRatio="none">
+        <path class="survey-contour survey-draw" d="M-10,340 C 80,300 140,360 210,320 C 280,280 320,330 400,300 C 470,275 520,310 610,290" />
+        <path class="survey-contour survey-draw" d="M-10,300 C 70,255 150,310 220,270 C 290,230 330,280 410,250 C 480,222 530,255 610,235" />
+        <path class="survey-contour survey-draw" d="M-10,255 C 60,205 160,255 230,210 C 300,168 340,215 420,190 C 490,168 540,200 610,180" />
+        <path class="survey-contour survey-draw" d="M-10,205 C 60,150 170,195 235,150 C 300,108 345,150 425,128 C 495,108 545,138 610,120" />
+        <path class="survey-contour survey-draw" d="M-10,150 C 70,95 180,130 240,88 C 300,48 350,85 430,66 C 500,48 550,72 610,58" />
+        <path class="survey-contour survey-draw" d="M-10,95 C 90,45 190,72 245,32 C 300,-6 355,25 435,10 C 500,-4 555,14 610,4" />
+      </svg>
+      <div class="survey-tag survey-tag--coord">SITE SURVEY<br>{{ $hero.survey_coord }}</div>
+      <div class="survey-tag survey-tag--north">
+        <svg class="compass" width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+          <circle cx="13" cy="13" r="11" fill="none" stroke="currentColor" stroke-width="1"/>
+          <path d="M13 4 L16 14 L13 11.5 L10 14 Z" fill="currentColor"/>
+        </svg>
+        N
+      </div>
+      <div class="survey-tag survey-tag--scale">
+        {{ $hero.survey_caption }}
+        <div class="scale-bar"><span></span><span></span><span>200m</span></div>
+      </div>
+    </div>
+  </div>
+</section>

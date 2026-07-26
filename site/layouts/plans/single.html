@@ -1,0 +1,64 @@
+{{ define "main" }}
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="/#plans">&larr; Back to pre-designed plans</a>
+    <p class="eyebrow eyebrow--accent">Pre-designed plan</p>
+    <h1>{{ .Title }}</h1>
+    <div class="detail-spec-row">
+      <span class="spec-tag">{{ .Params.spec | upper }}</span>
+      {{ with .Params.size_sqft }}<span class="spec-tag">{{ lang.FormatNumber 0 . }} SQFT</span>{{ end }}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="plans-banner">
+      <div><strong>BCIN-certified</strong> and drafted to align with local conservation authority and Ontario Building Code requirements for this area.</div>
+    </div>
+
+    <div class="detail-grid">
+      <div>
+        <div class="shot-placeholder shot-placeholder--large"><p>PHOTO NEEDED<br>{{ .Params.photo_needed }}</p></div>
+        <div class="detail-copy">{{ .Content }}</div>
+      </div>
+
+      <div>
+        <div class="plan-price plan-price--detail">
+          <span>Starting at</span>
+          <span class="amount">{{ lang.FormatNumber 0 .Params.price | printf "$%s" }}{{ if .Params.price_is_placeholder }}<small>PLACEHOLDER PRICE</small>{{ end }}</span>
+        </div>
+
+        {{ if .Params.includes }}
+        <div class="detail-highlights">
+          <p class="eyebrow">What's included</p>
+          <ul>
+            {{ range .Params.includes }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        {{ if .Params.features }}
+        <div class="detail-highlights">
+          <p class="eyebrow">Features</p>
+          <ul>
+            {{ range .Params.features }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        {{ if .Params.restrictions }}
+        <div class="detail-highlights detail-highlights--muted">
+          <p class="eyebrow">Restrictions</p>
+          <ul>
+            {{ range .Params.restrictions }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <a class="btn btn--solid" style="margin-top: 1.5rem;" href="/#contact">Enquire about this plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,28 @@
+# Claude stuff
+.claude/worktrees/
+.claude/settings.local.json
+
+# Hugo build output / cache
+public/
+resources/
+
+# Hugo module cache
+.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment / secrets
+.env
+.env.*
+!.env.local.example
+
+# Accessibility tooling
+node_modules/

@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem; width:100%;">
+    <span>&copy; {{ now.Format "2006" }} {{ site.Params.businessName }} — {{ site.Params.serviceArea }}</span>
+    {{ if not site.Params.allowIndexing }}
+    <span>{{ site.Params.environmentLabel | default "Preview" }} build · not indexed · not for distribution</span>
+    {{ end }}
+  </div>
+</footer>

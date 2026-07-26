@@ -1,0 +1,8 @@
+baseURL = 'https://mountainsidedesign.ca/'
+
+[params]
+  environmentLabel = "Production"
+
+  # When Adam signs off on launch, flip this to true — it's the only
+  # switch needed to let search engines and AI crawlers index the site.
+  # allowIndexing = true
