@@ -1,0 +1,42 @@
+locale = 'en-CA'
+title = 'Mountainside Design'
+enableRobotsTXT = true
+summarylength = 40
+timeout = '30s'
+
+# Sections rendered as plain content collections, not a blog — no per-item RSS needed.
+disableKinds = ['RSS', 'taxonomy', 'term']
+
+[pagination]
+  pagerSize = 12
+
+[params]
+  # Master switch for whether this build may be indexed / crawled by search
+  # engines and AI crawlers. Stays false in every environment until Adam
+  # signs off on launch — flip it in config/production/hugo.toml only.
+  allowIndexing = false
+  tagline = "Architectural design — Collingwood, Ontario"
+  businessName = "Mountainside Design"
+  contactEmail = "info@mountainsidedesign.ca"
+  contactPhone = ""
+  serviceArea = "Collingwood & the Blue Mountains"
+
+[[menus.main]]
+  name = "Work"
+  url = "/#work"
+  weight = 10
+
+[[menus.main]]
+  name = "Plans"
+  url = "/#plans"
+  weight = 20
+
+[[menus.main]]
+  name = "Services"
+  url = "/#services"
+  weight = 30
+
+[[menus.main]]
+  name = "About"
+  url = "/#about"
+  weight = 40

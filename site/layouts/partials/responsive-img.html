@@ -1,0 +1,47 @@
+{{/*
+  Responsive <picture> partial: generates webp + jpg at a few widths from a
+  source image in assets/, so mobile doesn't download the same file as a
+  wide desktop viewport.
+
+  Usage: {{ partial "responsive-img.html" (dict "src" "images/adam.jpg" "alt" "..." "sizes" "(max-width: 800px) 100vw, 40vw" "class" "..." "loading" "eager") }}
+*/}}
+{{ $src := .src }}
+{{ $alt := .alt }}
+{{ $class := .class }}
+{{ $sizes := .sizes | default "100vw" }}
+{{ $loading := .loading | default "lazy" }}
+{{ $widths := .widths | default (slice 480 800 1200) }}
+
+{{ $img := resources.Get $src }}
+{{ if not $img }}
+  {{ errorf "responsive-img.html: could not find image %q" $src }}
+{{ end }}
+
+{{ $jpgSrcset := slice }}
+{{ $webpSrcset := slice }}
+{{ $fallback := "" }}
+
+{{ range $widths }}
+  {{ $w := . }}
+  {{ if le $w $img.Width }}
+    {{ $jpg := $img.Resize (printf "%dx q82" $w) }}
+    {{ $webp := $img.Resize (printf "%dx webp q75" $w) }}
+    {{ $jpgSrcset = $jpgSrcset | append (printf "%s %dw" $jpg.RelPermalink $w) }}
+    {{ $webpSrcset = $webpSrcset | append (printf "%s %dw" $webp.RelPermalink $w) }}
+    {{ $fallback = $jpg.RelPermalink }}
+  {{ end }}
+{{ end }}
+
+<picture>
+  {{ if $webpSrcset }}<source type="image/webp" srcset="{{ delimit $webpSrcset ", " }}" sizes="{{ $sizes }}">{{ end }}
+  <img
+    {{ if $fallback }}src="{{ $fallback }}"{{ else }}src="{{ $img.RelPermalink }}"{{ end }}
+    {{ if $jpgSrcset }}srcset="{{ delimit $jpgSrcset ", " }}" sizes="{{ $sizes }}"{{ end }}
+    alt="{{ $alt }}"
+    width="{{ $img.Width }}"
+    height="{{ $img.Height }}"
+    loading="{{ $loading }}"
+    decoding="async"
+    {{ with $class }}class="{{ . }}"{{ end }}
+  >
+</picture>

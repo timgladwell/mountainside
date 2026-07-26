@@ -1,0 +1,7 @@
+# Placeholder — replace once the Cloudflare Pages project exists and the
+# real staging URL (project's *.pages.dev branch alias, or a custom
+# staging subdomain) is known.
+baseURL = 'https://staging.mountainsidedesign.pages.dev/'
+
+[params]
+  environmentLabel = "Staging"

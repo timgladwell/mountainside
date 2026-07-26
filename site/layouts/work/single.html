@@ -1,0 +1,47 @@
+{{ define "main" }}
+<section class="detail-hero">
+  <div class="wrap">
+    <a class="back-link" href="/#work">&larr; Back to selected work</a>
+    <p class="eyebrow eyebrow--accent">{{ .Params.scope }} &middot; {{ .Params.location }}</p>
+    <h1>{{ .Title }}</h1>
+    <div class="detail-spec-row">
+      {{ with .Params.scope }}<span class="spec-tag">{{ . | upper }}</span>{{ end }}
+      {{ with .Params.size_sqft }}<span class="spec-tag">{{ lang.FormatNumber 0 . }} SQFT</span>{{ end }}
+      {{ with .Params.year }}<span class="spec-tag">{{ . }}</span>{{ end }}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="detail-grid">
+      <div>
+        <div class="shot-placeholder shot-placeholder--large"><p>PHOTO NEEDED<br>{{ .Params.photo_needed }}</p></div>
+
+        {{ if .Params.gallery }}
+        <div class="detail-gallery">
+          {{ range .Params.gallery }}
+          <div class="shot-placeholder"><p>PHOTO NEEDED<br>{{ . }}</p></div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+      <div>
+        {{ if .Params.highlights }}
+        <div class="detail-highlights">
+          <p class="eyebrow">Worth noting</p>
+          <ul>
+            {{ range .Params.highlights }}<li>{{ . }}</li>{{ end }}
+          </ul>
+        </div>
+        {{ end }}
+
+        <div class="detail-copy">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

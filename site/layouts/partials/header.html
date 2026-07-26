@@ -1,0 +1,14 @@
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="{{ "/" | relURL }}">
+      {{ partial "responsive-img.html" (dict "src" "images/MountainsideDesignLogo.jpg" "alt" site.Params.businessName "widths" (slice 84 168) "sizes" "84px" "loading" "eager") }}
+      <span class="brand-name">ARCHITECTURAL DESIGN<strong>Collingwood, Ontario</strong></span>
+    </a>
+    <ul class="nav-links">
+      {{ range site.Menus.main }}
+      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+      {{ end }}
+      <li><a class="nav-cta" href="#contact">Start a project</a></li>
+    </ul>
+  </div>
+</header>

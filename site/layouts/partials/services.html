@@ -1,0 +1,25 @@
+{{ $services := .Params.services }}
+{{ $items := (site.GetPage "services").Pages.ByWeight }}
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">{{ $services.eyebrow }}</p>
+      <h2>{{ $services.heading }}</h2>
+      <p>{{ $services.intro }}</p>
+    </div>
+
+    <div class="services-list">
+      {{ range $items }}
+      <div class="service-row">
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.description }}</p>
+        {{ if eq .Params.pricing_type "fixed" }}
+        <div class="price-tag price-tag--fixed">{{ with .Params.price_prefix }}{{ . | upper }} {{ end }}{{ lang.FormatNumber 0 .Params.price | printf "$%s" }} FIXED{{ if .Params.price_is_placeholder }}<br><small>PLACEHOLDER PRICE</small>{{ end }}</div>
+        {{ else }}
+        <div class="price-tag price-tag--quoted">QUOTED</div>
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
