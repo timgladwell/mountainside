@@ -15,11 +15,11 @@ disableKinds = ['RSS', 'taxonomy', 'term']
   # engines and AI crawlers. Stays false in every environment until Adam
   # signs off on launch — flip it in config/production/hugo.toml only.
   allowIndexing = false
-  tagline = "Architectural design — Collingwood, Ontario"
+  tagline = "Architectural design — Collingwood, Blue Mountains & Grey-Bruce County"
   businessName = "Mountainside Design"
   contactEmail = "info@mountainsidedesign.ca"
   contactPhone = ""
-  serviceArea = "Collingwood & the Blue Mountains"
+  serviceArea = "Collingwood, the Blue Mountains & Grey-Bruce County"
 
 [[menus.main]]
   name = "Work"
@@ -27,13 +27,13 @@ disableKinds = ['RSS', 'taxonomy', 'term']
   weight = 10
 
 [[menus.main]]
-  name = "Plans"
-  url = "/#plans"
+  name = "Services"
+  url = "/#services"
   weight = 20
 
 [[menus.main]]
-  name = "Services"
-  url = "/#services"
+  name = "Plans"
+  url = "/#plans"
   weight = 30
 
 [[menus.main]]
