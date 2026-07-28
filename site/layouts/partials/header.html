@@ -4,11 +4,26 @@
       {{ partial "responsive-img.html" (dict "src" "images/MountainsideDesignLogo.jpg" "alt" site.Params.businessName "widths" (slice 84 168) "sizes" "84px" "loading" "eager") }}
       <span class="brand-name">ARCHITECTURAL DESIGN<strong>Collingwood, Ontario</strong></span>
     </a>
-    <ul class="nav-links">
-      {{ range site.Menus.main }}
-      <li><a href="{{ .URL }}">{{ .Name }}</a></li>
-      {{ end }}
-      <li><a class="nav-cta" href="#contact">Start a project</a></li>
-    </ul>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+    <label for="nav-toggle" class="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="nav-panel">
+      <ul class="nav-links">
+        {{ range site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+        <li><a class="nav-cta" href="#contact">Start a project</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
+
+{{/* ponytail: checkbox-driven menu needs a few lines of JS to close on link tap; no framework */}}
+<script>
+  document.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () { document.getElementById('nav-toggle').checked = false; });
+  });
+</script>
